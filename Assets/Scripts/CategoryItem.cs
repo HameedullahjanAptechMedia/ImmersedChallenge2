@@ -28,6 +28,7 @@ public class CategoryItem : MonoBehaviour
                 _item.transform.SetParent (uiManger.itemParent.transform);
                 _item.transform.localScale = Vector3.one;
                 _item.GetComponentInChildren<TextMeshProUGUI>().text = myItems[i].name;
+                _item.GetComponent<item>().toolTipText.text = myItems[i].description;
                 StartCoroutine(DownloadImage(myItems[i].url, _item.transform.GetChild(0).GetComponentInChildren<Image>()));
             }
         }
